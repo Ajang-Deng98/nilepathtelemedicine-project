@@ -1,0 +1,254 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+
+
+/* Navbar styling */
+.navbar {
+  background:  #14055a; /* Blue-Green Gradient */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Navbar left section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar-links li a.active {
+  color: #FFD700; /* Gold color for the active link */
+  border-bottom: 2px solid #FFD700; /* Underline for emphasis */
+  padding-bottom: 2px;
+}
+
+/* Navbar right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Search and profile section */
+.navbar-search-profile input {
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  /* Hide main navbar items */
+  .navbar-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 70px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px 0;
+      z-index: 1000;
+  }
+
+  /* Display navbar links when the .active class is added */
+  .navbar-links.active {
+      display: flex;
+  }
+
+  /* Show hamburger icon on small screens */
+  .hamburger {
+      display: flex;
+  }
+}
+
+
+
+
+
+
+
+
+/* Flex Container */
+/* Flex Container */
+.bmi-flex-container {
+  display: flex;
+  flex-direction: row; /* Aligns children horizontally */
+  gap: 30px; /* Adds space between the form and info sections */
+  justify-content: space-between; /* Ensures they are spaced out across the container */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  margin-top: 40px; /* Adds more space from the top */
+  margin-bottom: 40px; /* Adds more space from the bottom */
+  padding: 20px; /* Adds padding around the entire container */
+}
+
+/* Heading for BMI Calculation */
+/* Heading for BMI Calculation */
+.intro {
+  text-align: center; /* Centers the heading */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto; /* Ensures heading is centered */
+  color:  #14055a; 
+  margin-bottom: 40px; /* Adds space below the heading */
+  margin-top: 80px;
+}
+
+/* Form Styling */
+.bmi-form {
+  flex: 1;
+  min-width: 280px; /* Reduces the width for better use of space */
+  padding: 20px;
+  border: 1px solid  #14055a;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-right: 15px; /* Adds space to the right of the form */
+}
+
+.bmi-form label {
+  display: block;
+  margin-bottom: 10px; /* Increased space between label and input */
+  font-size: 16px;
+}
+
+.bmi-form input[type="number"],
+.bmi-form input[type="text"],
+.bmi-form input[type="submit"] {
+  width: 100%;
+  padding: 7px; /* Slightly bigger padding for better interaction */
+  margin-bottom: 10px; /* More space between inputs */
+  border: 1px solid  #14055a;
+  border-radius: 5px;
+  font-size: 16px;
+  color:  #14055a; 
+  /* Makes input text a bit larger */
+}
+
+.bmi-form input[type="submit"] {
+  background-color:  #14055a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* Information Section Styling */
+.bmi-info {
+  flex: 1;
+  min-width: 280px; /* Reduced to match form size */
+  padding: 20px;
+  border: 1px solid  #14055a;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-left: 15px; /* Adds space to the left of the information section */
+}
+
+.bmi-info h2 {
+  margin-bottom: 20px; /* Adds space below headings */
+  font-size: 18px;
+  color: #14055a;
+  margin-top: 20px;
+}
+
+.bmi-info ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.bmi-info ul li {
+  margin-bottom: 12px; /* Adds more space between list items */
+  font-size: 16px; /* Increases font size for better readability */
+}
+
+
+/* Confirmation Reminder Message Styling */
+.confirmation-reminder {
+  margin-top: 40px;
+  padding: 15px;
+  background-color: #f4f4ff;
+  border-left: 4px solid #14055a;
+  border-radius: 8px;
+  color: #191b1b;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-reminder p {
+  margin: 0;
+  color: #191b1b;
+  line-height: 1.6;
+}
+
+.confirmation-reminder strong {
+  color: #14055a;
+  font-weight: bold;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .confirmation-reminder {
+      font-size: 0.85rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bmi-flex-container {
+    flex-direction: column; /* Stack the form and info sections vertically on smaller screens */
+    gap: 40px; /* More space between stacked elements */
+  }
+  
+  .bmi-form,
+  .bmi-info {
+    min-width: 100%; /* Makes each section full-width on small screens */
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

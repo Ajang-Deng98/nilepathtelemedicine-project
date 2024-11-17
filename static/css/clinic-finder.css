@@ -1,0 +1,261 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    
+  font-family: "Nunito", system-ui;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+}
+
+
+/* Navbar styling */
+.navbar {
+    background:  #14055a;/* Blue-Green Gradient */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Navbar left section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar links */
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.navbar-links li a.active {
+    color: #FFD700; /* Gold color for the active link */
+    border-bottom: 2px solid #FFD700; /* Underline for emphasis */
+    padding-bottom: 2px;
+}
+
+/* Navbar right section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Search and profile section */
+.navbar-search-profile input {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    /* Hide main navbar items */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    /* Display navbar links when the .active class is added */
+    .navbar-links.active {
+        display: flex;
+    }
+
+    /* Show hamburger icon on small screens */
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+
+main.clinic-finder {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+/* Headings and Titles */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #14055a;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #14055a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Instructional Text */
+p {
+    font-size: 1.1rem;
+    color: #4d4d4d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form.clinic-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+form.clinic-form input[type="text"] {
+    padding: 15px;
+    width: 75%;
+    max-width: 350px;
+    border: 2px solid #14055a;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #191b1b;
+    transition: border-color 0.3s ease;
+}
+
+form.clinic-form input[type="text"]:focus {
+    border-color: #191b1b;
+    outline: none;
+}
+
+form.clinic-form button {
+    padding: 15px 30px;
+    background-color: #14055a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 15px;
+}
+
+form.clinic-form button:hover {
+    background-color: #191b1b;
+    transform: scale(1.05);
+}
+
+/* Clinic List Styling */
+ul.clinic-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul.clinic-list li {
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    color: #191b1b;
+}
+
+ul.clinic-list li:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+ul.clinic-list li:before {
+    content: "🏥";
+    margin-right: 10px;
+    color: #14055a;
+}
+
+/* Map Styling */
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    form.clinic-form input[type="text"],
+    form.clinic-form button {
+        width: 90%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}

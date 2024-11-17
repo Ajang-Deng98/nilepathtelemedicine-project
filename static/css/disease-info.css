@@ -1,0 +1,308 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+/* Navbar styling */
+.navbar {
+    background:  #14055a;/* Blue-Green Gradient */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Navbar left section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar links */
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.navbar-links li a.active {
+    color: #FFD700; /* Gold color for the active link */
+    border-bottom: 2px solid #FFD700; /* Underline for emphasis */
+    padding-bottom: 2px;
+}
+
+/* Navbar right section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Search and profile section */
+.navbar-search-profile input {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    /* Hide main navbar items */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    /* Display navbar links when the .active class is added */
+    .navbar-links.active {
+        display: flex;
+    }
+
+    /* Show hamburger icon on small screens */
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+
+/* Introduction Section Styling */
+#intro {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+#intro h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color:  #14055a;
+    font-size: 1.8em;
+    line-height: 1.2em;
+}
+
+#intro p {
+    font-family: 'Nunito', sans-serif;
+    color: #ac0d0d;
+    font-size: 1em;
+    line-height: 1.3em;
+}
+
+#intro p:last-child {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    #intro h1 {
+        font-size: 2em;
+    }
+    
+    #intro p {
+        font-size: 1em;
+    }
+}
+
+/* Disease Search */
+/* Styling for Disease Search Section */
+#disease-search {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#disease-search h1 {    
+    font-size: 20px;
+    color:  #14055a; /* Blue for headings */
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#disease-search h2 {
+    font-size: 18px;
+    color:  #14055a; /* Blue for headings */
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#search-input {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #14055a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Note Styling */
+.note {
+    font-size: 1em;
+    color: #ac0d0d;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Disease Information Section */
+#disease-info {
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Disease Card */
+.disease {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto; /* Ensures the card height adjusts dynamically */
+    min-height: 300px; /* Controls minimum height for uniformity */
+}
+
+.disease:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Disease Icon or Image Styling */
+.disease img, .disease .icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #f1f9ff;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.disease:hover img, .disease:hover .icon {
+    transform: scale(1.1);
+}
+
+/* Disease Title */
+.disease h3 {
+    color:  #14055a;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* Disease Details */
+.disease p {
+    color: #5f6368;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Call-to-Action Button */
+.disease .cta-button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.disease .cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #disease-info {
+        padding: 30px;
+    }
+
+    .disease {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,160 @@
+/* Reset and General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  background-color: #f9fafb; /* Light gray background */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Take up full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Container Styling for Login and Registration Forms */
+.login-container,
+.register-container {
+  background-color: #ffffff; /* White background */
+  padding: 20px; /* Reduced padding inside container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Reduced max width for smaller container */
+  max-height: 90vh; /* Ensure it fits within the screen */
+  text-align: center;
+  margin: auto; /* Center align on the page */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Add extra space above the container */
+.login-container,
+.register-container {
+  margin-top: 20px; /* Space on top */
+  margin-bottom: 20px; /* Space at the bottom */
+}
+
+/* Flexbox for Container */
+.flex-container {
+  display: flex; /* Enable flex layout */
+  align-items: center; /* Vertically center elements */
+  justify-content: space-between; /* Spread items evenly */
+  gap: 20px; /* Space between flex items */
+}
+
+/* Form Section Styling */
+.form-section {
+  flex: 1.5; /* Form section takes up 1.5 parts of available space */
+}
+
+/* Description Styling */
+.description {
+  font-size: 0.9rem; /* Slightly smaller font size */
+  color: #191b1b; /* Dark text color */
+  margin-bottom: 20px; /* Space below description */
+}
+
+/* Header Styling */
+header h2 {
+  color: #14055a; /* Dark purple color */
+  font-size: 1.8rem; /* Smaller header font size */
+  margin-bottom: 20px; /* Space below header */
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  text-align: left; /* Align text to the left */
+  width: 100%; /* Form takes up full width */
+}
+
+/* Input Field Styling */
+input {
+  padding: 5px; /* Reduced padding inside input fields */
+  font-size: 0.9rem; /* Smaller input text size */
+  margin-bottom: 20px; /* Space below each input */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f9fafb; /* Light background color */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease; /* Smooth transition for focus state */
+  width: 100%; /* Inputs take full width */
+}
+
+input:focus {
+  border-color: #14055a; /* Dark purple border when input is focused */
+}
+
+/* Custom styling for input field and icon */
+.password-field-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  padding-right: 30px; /* Leave space for the icon */
+  width: 100%;
+  box-sizing: border-box; /* Prevent the icon from breaking the layout */
+}
+
+/* Styling for the toggle icon inside the input field */
+.password-toggle {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 30%; /* Adjusted top position to push the icon up slightly */
+  transform: translateY(-50%);
+}
+
+/* Button Styling */
+button {
+  padding: 12px; /* Reduced button size */
+  font-size: 1rem; /* Reduced button font size */
+  background: #14055a; /* Dark purple background */
+  color: #ffffff; /* White text */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+  width: 100%; /* Button takes full width */
+}
+
+button:hover {
+  background-color: #191b1b; /* Dark gray on hover */
+}
+
+/* Additional Links Styling */
+.additional-links {
+  margin-top: 10px; /* Space above links */
+}
+
+.additional-links a {
+  color: #14055a; /* Dark purple color */
+  text-decoration: none; /* Remove underline */
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+.additional-links a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 500px) {
+  .login-container, .register-container {
+    padding: 15px; /* Reduce padding on small screens */
+    max-width: 95%; /* Allow more width usage */
+    max-height: 95vh; /* Fit within the screen */
+  }
+
+  input, button {
+    padding: 8px; /* Adjust input and button padding */
+    width: 100%; /* Ensure full width for smaller screens */
+  }
+}

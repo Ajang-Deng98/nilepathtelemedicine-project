@@ -1,0 +1,396 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    
+  font-family: "Nunito", system-ui;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+}
+
+
+
+/* Navbar styling */
+.navbar {
+    background:  #14055a;/* Blue-Green Gradient */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Navbar left section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar links */
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.navbar-links li a.active {
+    color: #FFD700; /* Gold color for the active link */
+    border-bottom: 2px solid #FFD700; /* Underline for emphasis */
+    padding-bottom: 2px;
+}
+
+/* Navbar right section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Search and profile section */
+.navbar-search-profile input {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    /* Hide main navbar items */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    /* Display navbar links when the .active class is added */
+    .navbar-links.active {
+        display: flex;
+    }
+
+    /* Show hamburger icon on small screens */
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+
+/* Main Section */
+main {
+    padding: 60px 20px; /* Added padding for spacious layout */
+    background-color: #ffffff; /* White background */
+    color:  #14055a; /* Dark text color */
+    text-align: center;
+    margin-top: 70px; /* Center-align text */
+    margin-bottom: 30px;
+    
+}
+
+/* Intro Text */
+.intro-text {
+    font-size: 18px;
+    color: #191b1b;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    line-height: 1.6;
+    
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    margin-top: 40px;
+}
+
+/* Card Design */
+.card {
+    background-color: #f9f9f9; /* Light gray background */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 25px;
+    width: 280px; /* Fixed width for cards */
+    border-radius: 12px; /* Rounded corners */
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 80px; /* Adjusted image size */
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #14055a; /* Blue color for links */
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.card a:hover {
+    color: #fff; /* White color on hover */
+    background-color: #14055a; /* Blue background on hover */
+    padding: 10px 15px; /* Add padding for a button-like effect */
+    border-radius: 6px; /* Rounded corners on hover */
+}
+
+.card p {
+    font-size: 16px;
+    color: #191b1b;
+    line-height: 1.6; /* Improved line height for better readability */
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards-container {
+        justify-content: center; /* Center cards on smaller screens */
+    }
+
+    .card {
+        width: 100%; /* Full width cards on small screens */
+    }
+}
+
+
+
+
+
+/* Health Tips Section */
+.health-tips {
+    margin-top: 80px;
+    padding: 60px 20px;
+    background-color: #ffffff; /* Clean white background */
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.health-tips h2 {
+    font-size: 32px;
+    color:  #14055a; /* Blue for headings */
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.tips-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tip {
+    background-color: #f9f9f9; /* Very light gray background */
+    padding: 25px;
+    border-radius: 16px;
+    width: 250px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #333;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tip:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+.tip img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tip img:hover {
+    transform: scale(1.1);
+}
+
+.tip h3 {
+    font-size: 20px;
+    color:  #14055a; /* Blue for the tip title */
+    margin-bottom: 10px;
+}
+
+.tip p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .tips-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tip {
+        width: 80%; /* More space on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .tip img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .health-tips h2 {
+        font-size: 28px;
+    }
+
+    .tip h3 {
+        font-size: 18px;
+    }
+
+    .tip p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tip {
+        width: 90%;
+    }
+
+    .health-tips h2 {
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+/* Health Resources Section */
+.health-resources {
+    margin-top: 60px;
+    padding: 60px 20px; /* More padding for a spacious feel */
+    background-color: #ffffff; /* White background for clean look */
+    color: #191b1b; /* Dark text for contrast */
+    text-align: center; /* Center-align the content */
+}
+
+/* Resource Boxes */
+.resource {
+    background-color: #f9f9f9; /* Light gray background for resource boxes */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Larger, soft shadow for modern feel */
+    padding: 25px;
+    margin: 20px;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    width: 280px; /* Compact box width */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover transition */
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+/* Resource Title */
+.resource h3 {
+    font-size: 22px;
+    color: #14055a; /* Bold blue color for titles */
+    margin-bottom: 12px;
+    font-weight: 600; /* Slightly bolder title text */
+    letter-spacing: 0.5px;
+}
+
+/* Resource Description */
+.resource p {
+    font-size: 16px; /* Slightly smaller text for description */
+    color: #191b1b;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Spacing between lines for readability */
+}
+
+/* Resource Link */
+.resource a {
+    text-decoration: none;
+    color: #14055a; /* Blue for links */
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: 2px solid #14055a; /* Add a border for the button-like effect */
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+    letter-spacing: 1px;
+}
+
+.resource a:hover {
+    color: #fff; /* White text on hover */
+    background-color: #14055a; /* Blue background on hover */
+    border-color: #14055a; /* Keep border same as background */
+    transform: translateY(-3px); /* Subtle lift on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .health-resources {
+        padding: 40px 20px; /* Reduce padding on smaller screens */
+    }
+
+    .resource {
+        width: 100%; /* Make the boxes full-width on smaller screens */
+        margin-bottom: 20px; /* Add space between boxes when stacked */
+    }
+}

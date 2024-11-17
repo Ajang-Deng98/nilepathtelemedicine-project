@@ -1,0 +1,413 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+
+
+/* Navbar styling */
+.navbar {
+  background:  #14055a; /* Blue-Green Gradient */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Navbar left section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar-links li a.active {
+  color: #FFD700; /* Gold color for the active link */
+  border-bottom: 2px solid #FFD700; /* Underline for emphasis */
+  padding-bottom: 2px;
+}
+
+/* Navbar right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Search and profile section */
+.navbar-search-profile input {
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  /* Hide main navbar items */
+  .navbar-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 70px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px 0;
+      z-index: 1000;
+  }
+
+  /* Display navbar links when the .active class is added */
+  .navbar-links.active {
+      display: flex;
+  }
+
+  /* Show hamburger icon on small screens */
+  .hamburger {
+      display: flex;
+  }
+}
+
+
+
+/* Main Container Layout */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 80px 20px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Layout for Small Screens */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 50px 15px;
+    gap: 20px;
+  }
+}
+
+/* Welcome Note Styling */
+.welcome-note {
+  text-align: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 125px;
+}
+
+.welcome-note h2 {
+  color: #14055a;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.welcome-note p {
+  color: #191b1b;
+  font-size: 1rem;
+}
+
+/* Doctors Section */
+.doctor-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.heading {
+  text-align: center;
+  color: #14055a;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.doctor-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.doctor-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.doctor-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.doctor-card h3 {
+  color: #14055a;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.doctor-card p {
+  color: #191b1b;
+  font-size: 0.9rem;
+}
+
+/* Form Section */
+.form-section {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  text-align: center;
+  color: #14055a;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+/* Form Fields */
+form label {
+  font-size: 1rem;
+  color: #14055a;
+  margin-bottom: 8px;
+  display: block;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="date"],
+form input[type="time"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #191b1b;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #14055a;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #191b1b;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #14055a;
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 1024px) {
+  .welcome-note h2, .doctor-section h2, .form-section h2 {
+    font-size: 1.2rem;
+  }
+
+  form label, form input, form select, form textarea, button[type="submit"] {
+    font-size: 0.9rem;
+  }
+
+  .doctor-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 30px 10px;
+  }
+
+  .doctor-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .welcome-note h2, .doctor-section h2, .form-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .doctor-card h3, form label, form input, form select, form textarea, button[type="submit"] {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+/* Container styling for result */
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 50px;
+  
+}
+
+/* Result card styling */
+.result-card {
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin-top: 70px;
+}
+
+/* Result title */
+.result-card h1 {
+  font-size: 28px;
+  font-family: 'Nunito', sans-serif;
+  color: #14055a;
+  margin-bottom: 20px;
+}
+
+/* Note styling */
+.bmi-note {
+  background-color: #fff3cd;
+  border-left: 4px solid #f0ad4e;
+  padding: 15px;
+  margin-bottom: 20px;
+  color: #856404;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Styling for BMI result details */
+.bmi-details p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.result-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: #14055a;
+}
+
+.result-category, .result-risk {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.result-category {
+  font-size: 20px;
+}
+
+.result-risk {
+  font-size: 18px;
+  color: #f0ad4e;
+}
+
+/* Link to go back */
+.back-link {
+  display: inline-block;
+  background-color: #14055a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #5e2a8c;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .result-card {
+      padding: 20px;
+      width: 100%;
+      max-width: 350px;
+  }
+
+  .result-card h1 {
+      font-size: 24px;
+  }
+
+  .bmi-details p {
+      font-size: 16px;
+  }
+}
