@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Nunito:ital,wght@0,200..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="register-container">
+    <!-- Flexbox Container -->
+    <div class="flex-container">
+      
+      <!-- Image Section -->
+      <div class="image-section">
+        
+      </div>
+
+      <!-- Form Section -->
+      <div class="form-section">
+        
+        <header>
+          <h2>Create an Account</h2>
+        </header>
+
+        <form action="/register" method="post">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+
+          <label for="county">County in South Sudan</label>
+          <input type="text" id="county" name="county" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+
+          <button type="submit">Register</button>
+        </form>
+
+        <!-- Link to Login Page -->
+        <p class="additional-links">Already have an account? <a href="/login">Log in here</a></p>
+       
+
+
+
+      </div> <!-- End of form section -->
+
+    </div> <!-- End of flex-container -->
+  </div>
+
+  <!-- Flash messages -->
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} mt-3">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  
+
+</body>
+</html>

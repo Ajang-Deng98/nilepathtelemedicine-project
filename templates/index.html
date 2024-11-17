@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NilePath Telemedicine - Home</title>
+
+  <link rel="icon" href="{{ url_for('static', filename='images/Nilepath-removebg-preview.png') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <!-- Logo Section -->
+  <div class="logo">
+      <img src="{{ url_for('static', filename='images/Nilepath-removebg-preview.png') }}" alt="Logo">
+  </div>
+
+  <!-- Navbar Links (Hidden by default on small screens) -->
+  <ul class="navbar-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about-us">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonies">Testimonies</a></li>
+      <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <!-- Search, Contact Info, and Buttons -->
+  <div class="search-contact">
+      <input type="text" placeholder="Search...">
+      <div class="contact-info">
+          <span>+ (211) 925851806</span>
+          <span>info@nilepathtelemdecines.com</span>
+      </div>
+      <div class="buttons">
+          <form action="{{ url_for('login') }}">
+              <button type="submit">Login</button>
+          </form>
+          <form action="{{ url_for('register') }}">
+              <button type="submit">Register</button>
+          </form>
+      </div>
+  </div>
+
+  <!-- Hamburger Icons for Toggling Sections -->
+  <div class="hamburger primary-toggle" onclick="togglePrimaryMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+  <div class="hamburger secondary-toggle" onclick="toggleSecondaryMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+</nav>
+
+
+
+
+  <section id="hero" style="background-image: url('{{ url_for('static', filename='images/labimportant.jpg') }}'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+    <div class="hero-overlay"></div> <!-- Dark overlay to enhance text visibility -->
+    <div class="hero-content">
+      <h1>Welcome to NilePath Telemedicine</h1>
+      <p>Your trusted partner in healthcare and diagnostics. Book appointment, find nearby healthcare around you, and find reliable health information all in one place.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Main Section -->
+  <main>
+    <section id="about-us fade-in">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="{{ url_for('static', filename='images/donne.avif') }}" alt="About Us Image">
+        </div>
+        <div class="about-content">
+          <h2>About Us</h2>
+          <p><strong>Mission Statement:</strong> To enhance healthcare access in South Sudan by offering an online platform that streamlines booking appointment, provides crucial medical information, and connects users with healthcare facilities.</p>
+          <p><strong>Our Story:</strong> NilePath Telemedicine was founded with the vision of transforming healthcare in South Sudan. Recognizing the challenges faced by many in accessing timely and reliable medical services, we developed a platform that leverages technology to bridge this gap.</p>
+        </div>
+      </div>
+    </section>
+
+ <!-- Services Section -->
+ <section class="services fade-in">
+  <h2>Our Services</h2>
+  <div class="service-cards">
+    <div class="card">
+      <div class="icon">
+        <img src="{{ url_for('static', filename='images/microscope-64.webp') }}" alt="Patient Icon">
+      </div>
+      <h3>Online Booking appointment</h3>
+      <p>Schedule appointment with the doctors from the comfort of your home with ease.</p>
+      <a href="#" class="learn-more-btn">Learn more ➔</a>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <img src="{{ url_for('static', filename='images/disease.png') }}" alt="Disease Info Icon">
+      </div>
+      <h3>Disease Information</h3>
+      <p>Access comprehensive information on various diseases and treatments.</p>
+      <a href="#" class="learn-more-btn">Learn more ➔</a>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <img src="{{ url_for('static', filename='images/clinicfinder.webp') }}" alt="Clinic Icon">
+      </div>
+      <h3>Clinic Finder</h3>
+      <p>Locate nearby healthcare facilities and get contact details.</p>
+      <a href="#" class="learn-more-btn">Learn more ➔</a>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <img src="{{ url_for('static', filename='images/BMI.png') }}" alt="Clinic Icon">
+      </div>
+      <h3>BMI Calculator Guide</h3>
+         <p>Find answers to common questions about BMI calculations and learn how to interpret your results for better health insights.</p>
+          <a href="/" class="learn-more-btn">Go to BMI Calculator ➔</a>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="stats-container">
+  <div class="stat-box">
+    <div class="stat-icon">👤</div>
+    <div class="stat-number" data-target="1200">0</div>
+    <div class="stat-label">Users</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-icon">📈</div>
+    <div class="stat-number" data-target="850">0</div>
+    <div class="stat-label">Active Sessions</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-icon">⬇️</div>
+    <div class="stat-number" data-target="3500">0</div>
+    <div class="stat-label">Downloads</div>
+  </div>
+</div>
+
+
+
+
+<!-- Testimonials Section -->
+<section id="testimonies" class="testimonies-section fade-in">
+  <div class="container">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonies-grid">
+      <!-- Testimony 1 -->
+      <div class="testimony-card">
+        <img src="{{ url_for('static', filename='images/T1.jpg') }}" alt="Client 1" class="testimony-img">
+        <div class="testimony-content">
+          <h3>Kuir Juach</h3>
+    
+          <p class="testimony-text">"NilePath Telemedicine has transformed the way we handle diagnostic tests. Their platform is user-friendly and extremely efficient. Highly recommended!"</p>
+        </div>
+      </div>
+      <!-- Testimony 2 -->
+      <div class="testimony-card">
+        <img src="{{ url_for('static', filename='images/T2.jpg') }}" alt="Client 2" class="testimony-img">
+        <div class="testimony-content">
+          <h3>Kur Malual</h3>
+      
+          <p class="testimony-text">"We can now access and book appointments quickly and provide better treatment to our patients, thanks to NilePath Telemedicine's seamless integration."</p>
+        </div>
+      </div>
+      <!-- Testimony 3 -->
+      <div class="testimony-card">
+        <img src="{{ url_for('static', filename='images/T3.jpg') }}" alt="Client 3" class="testimony-img">
+        <div class="testimony-content">
+          <h3>John Akech</h3>
+         
+          <p class="testimony-text">"The booking and report collection process is smooth and efficient. It's really easy for our patients to access their lab results online now."</p>
+        </div>
+      </div>
+      
+      <!-- Testimony 5 -->
+      <div class="testimony-card">
+        <img src="{{ url_for('static', filename='images/calvin.jpg') }}" alt="Client 5" class="testimony-img">
+        <div class="testimony-content">
+          <h3>Mihigo Calvin</h3>
+       
+          <p class="testimony-text">"Using NilePath Telemedicine, our patients can quickly find and book services, and the follow-up is seamless. It has improved our workflow significantly."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Flexbox container for FAQ and Healthcare News sections -->
+<section class="faq-news-container fade-in">
+  <!-- New FAQ Section -->
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3>How do I book an appointment?</h3>
+            <p>You can book an appointment by clicking on the 'Book Appointment' button and following the instructions. You'll be guided through selecting a doctor and choosing an available time slot.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where can I find information about diseases?</h3>
+            <p>To find information about diseases, click on the 'Search Diseases' tab in the navigation bar. You'll be able to search for diseases by name, and view details such as symptoms, causes, treatments, and preventive measures.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I get detailed treatment recommendations?</h3>
+            <p>Yes, for each disease listed, we provide general treatment recommendations and guidelines. However, it’s important to consult with a healthcare professional for personalized medical advice.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I find a clinic near me?</h3>
+            <p>You can easily locate nearby clinics by clicking on the 'Find Clinics' tab in the navigation bar. Enter your location or allow the site to access your location, and it will show clinics in your area with details like services offered, contact information, and distance from you.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is Body Mass Index (BMI) and where can I find it?</h3>
+          <p>Body Mass Index (BMI) is a calculation using a person's height and weight to determine if they are underweight, normal weight, overweight, or obese, serving as a general health indicator. For accuracy, it should be used alongside other health assessments. You can calculate your BMI here when you login, health apps, or by consulting with your healthcare provider. Many clinics and hospitals also offer BMI assessments as part of regular health checkups.</p>
+      </div>
+      
+  </section>
+
+  <!-- Healthcare News Section -->
+  <section class="news">
+    <h2>Latest Healthcare News</h2>
+    <ul class="news-list">
+        <li><a href="https://www.cdc.gov/vaccines/acip/recs/grade/covid-19-2024-2025-6-months-and-older.html">COVID-19 vaccination updates and new policies for 2024-2025.</a></li>
+        <li><a href="https://www.cdc.gov/flu/prevent/index.html">New treatments available for common diseases in South Sudan.</a></li>
+        <li><a href="https://www.cdc.gov/malaria/travelers/index.html">How to prevent malaria during the rainy season.</a></li>
+        <li><a href="https://www.fda.gov/emergency-preparedness-and-response/coronavirus-disease-2019-covid-19/covid-19-vaccines-2024-2025">Latest advancements in telemedicine services in Africa.</a></li>
+        <li><a href="https://www.cdc.gov/vaccines/covid-19/index.html">New government health initiatives improving rural healthcare access.</a></li>
+        <li><a href="https://www.cdc.gov/mentalhealth/index.htm">5 tips for maintaining mental health in times of crisis.</a></li>
+        <li><a href="https://www.cdc.gov/hiv/default.html">Breakthroughs in HIV/AIDS treatment: What you need to know.</a></li>
+        <li><a href="https://www.cdc.gov/nutrition/index.html">The role of nutrition in disease prevention and recovery.</a></li>
+        <li><a href="https://www.who.int/news-room/fact-sheets/detail/antibiotic-resistance">Understanding and fighting antibiotic resistance in developing countries.</a></li>
+    </ul>
+  </section>
+</section>
+
+
+
+
+<section class="gallery">
+  <h2>Our Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="{{ url_for('static', filename='images/download1.jpeg') }}" alt="Description of Image 1"></div>
+    <div class="gallery-item"><img src="{{ url_for('static', filename='images/download2.jpeg') }}" alt="Description of Image 2"></div>
+    <div class="gallery-item"><img src="{{ url_for('static', filename='images/download3.jpeg') }}" alt="Description of Image 3"></div>
+    <div class="gallery-item"><img src="{{ url_for('static', filename='images/download4.jpeg') }}" alt="Description of Image 4"></div>
+    <div class="gallery-item"><img src="{{ url_for('static', filename='images/download2.jpeg') }}" alt="Description of Image 5"></div>
+    <div class="gallery-item"><img src="{{ url_for('static', filename='images/download1.jpeg') }}" alt="Description of Image 6"></div>
+    <!-- Add more gallery items as needed -->
+  
+
+  </div>
+</section>
+
+ 
+
+<!-- Footer Section -->
+<div class="footer-wrapper">
+  <div class="footer">
+    <div class="footer-section">
+        <h4>NilePath Telemedicine</h4>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+            <li><a href="#">Booking Appointment</a></li>
+            <li><a href="#">Body Mass Index</a></li>
+            <li><a href="#">Clinic Finder</a></li>
+            <li><a href="#">Disease Information</a></li>
+        </ul>
+    </div>
+
+    
+
+    <div class="footer-section subscription-box">
+        <h4>Stay Updated!</h4>
+        <p>Subscribe for the latest news and updates.</p>
+        <form action="https://formsubmit.co/ajangcholaguer98@gmail.com" method="POST" class="contact_form grid">
+            <div class="contact_content">
+                <label for="" class="contact_input">Name</label>
+                <input type="text" class="contact_input" name="name">
+            </div>
+            <div class="contact_content">
+                <label for="" class="contact_input">Email</label>
+                <input type="email" class="contact_input" name="email">
+            </div>
+            <div class="contact_content">
+                <label for="" class="contact_input">Message</label>
+                <textarea name="message" cols="0" rows="5" class="contact_input"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="button button--flex">
+                    Send Message<i class="uil uil-message button_icon"></i>
+                </button>
+            </div>
+        </form>
+
+        <ul class="social-icons">
+            <a href="#"><img src="{{ url_for('static', filename='images/twitter-64.webp') }}" alt="Twitter Icon"></a>
+            <a href="#"><img src="{{ url_for('static', filename='images/Instagram-64.webp') }}" alt="Instagram Icon"></a>
+            <a href="#"><img src="{{ url_for('static', filename='images/1_Facebook_colored_svg_copy-64.webp') }}" alt="Facebook Icon"></a>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+
+</body>
+</html>
+
+

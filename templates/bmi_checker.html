@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilepath Telemdecines - bmi checker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bmi_checker.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <!-- Hamburger Icon for Mobile -->
+                <div class="hamburger" onclick="toggleNavbar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+      
+                <!-- Navbar Links (Hidden on Mobile by Default) -->
+                <ul class="navbar-links">
+                    <li><a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Home</a></li>
+                    <li><a href="{{ url_for('book_appointment') }}" class="{% if request.endpoint == 'book_appointment' %}active{% endif %}">Book Appointment</a></li>
+                    <li><a href="{{ url_for('disease_info') }}" class="{% if request.endpoint == 'disease_info' %}active{% endif %}">Search Diseases</a></li>
+                    <li><a href="{{ url_for('clinic_finder') }}" class="{% if request.endpoint == 'clinic_finder' %}active{% endif %}">Find Clinics</a></li>
+                    <li><a href="{{ url_for('bmi_checker') }}" class="{% if request.endpoint == 'bmi_checker' %}active{% endif %}">BMI Calculator</a></li>
+                    <li><a href="{{ url_for('result') }}" class="{% if request.endpoint == 'result' %}active{% endif %}">BMI Results</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                </ul>
+            </div>
+      
+            <div class="navbar-right">
+                <div class="navbar-search-profile">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+        </nav>
+      </header>
+
+
+    <!-- BMI Calculator Container -->
+    <div class="container">
+
+       
+        
+        <h1>BMI Calculator</h1>
+        <p class="intro">Enter your details below to calculate your Body Mass Index (BMI). This information helps you understand your health better.</p>
+
+        <!-- Flex Container for Form and Information -->
+        <div class="bmi-flex-container">
+            <!-- BMI Calculator Form -->
+            <div class="bmi-form">
+                <form action="/calculate_bmi" method="post">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" name="weight" id="weight" required>
+
+                    <label for="height">Height (cm):</label>
+                    <input type="number" name="height" id="height" required>
+
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" required>
+
+                    <label for="sex">Sex (m/f):</label>
+                    <input type="text" name="sex" id="sex" required>
+
+                    <input type="submit" value="Calculate BMI">
+                </form>
+                <div class="confirmation-reminder">
+                    <p><strong>Note:</strong> After submitting, go to the results section above to check your BMI and what it means for your health. Thank you for choosing NilePath Telemedicine!</p>
+                </div>
+               
+            </div>
+
+            <!-- BMI Information Section -->
+            <div class="bmi-info">
+                <h2>What is BMI?</h2>
+                <p>Body Mass Index (BMI) is a measure that uses height and weight to determine if a person falls within a healthy weight range. It’s a quick, non-invasive way to gauge if you are underweight, normal weight, overweight, or obese.</p>
+
+                <h2>Why BMI Matters</h2>
+                <ul>
+                    <li><strong>Health Insight:</strong> Helps assess risks for conditions like heart disease and diabetes.</li>
+                    <li><strong>Guidance:</strong> Useful for setting personal health goals.</li>
+                    <li><strong>Quick Screening:</strong> Commonly used in health checks for overall wellness.</li>
+                </ul>
+
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bmi_checker.js') }}"></script>
+</body>
+</html>

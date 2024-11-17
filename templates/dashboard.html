@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NilePath Telemedicine - Dashboard</title>
+    
+    <!-- Link to Flask Static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+
+       <!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger" onclick="toggleNavbar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navbar Links (Hidden on Mobile by Default) -->
+            <ul class="navbar-links">
+                <li><a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Home</a></li>
+                <li><a href="{{ url_for('book_appointment') }}" class="{% if request.endpoint == 'book_appointment' %}active{% endif %}">Book Appointment</a></li>
+                <li><a href="{{ url_for('disease_info') }}" class="{% if request.endpoint == 'disease_info' %}active{% endif %}">Search Diseases</a></li>
+                <li><a href="{{ url_for('clinic_finder') }}" class="{% if request.endpoint == 'clinic_finder' %}active{% endif %}">Find Clinics</a></li>
+                <li><a href="{{ url_for('bmi_checker') }}" class="{% if request.endpoint == 'bmi_checker' %}active{% endif %}">BMI Calculator</a></li>
+                <li><a href="{{ url_for('result') }}" class="{% if request.endpoint == 'result' %}active{% endif %}">BMI Results</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <div class="navbar-search-profile">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </nav>
+</header>
+
+ 
+
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to NilePath Telemedicine!</h1>
+        <p class="intro-text">Your go-to platform for healthcare access in South Sudan. Connect with clinics, book appointments, and stay informed about health.</p>
+    
+        <!-- Cards Section -->
+        <div class="cards-container">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/BOOKINGGG.png') }}" alt="Book Lab Tests">
+                <a href="{{ url_for('book_appointment') }}">Book Appointment</a>
+                <p>Book appointments with our doctors and get expert advice on health concerns.</p>
+            </div>
+    
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/searchicon.png') }}" alt="Search Diseases">
+                <a href="{{ url_for('disease_info') }}">Search Diseases</a>
+                <p>Explore a variety of diseases and recommended treatments tailored for you.</p>
+            </div>
+    
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/locaniccon.jpg') }}" alt="Find Clinics">
+                <a href="{{ url_for('clinic_finder') }}">Find Clinics</a>
+                <p>Locate clinics and healthcare facilities near you for easy access.</p>
+            </div>
+    
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/BMI.png') }}" alt="BMI Calculator">
+                <a href="{{ url_for('bmi_checker') }}">BMI Calculator</a>
+                <p>Calculate your Body Mass Index and understand your health status.</p>
+            </div>
+        </div>
+    </main>
+    
+
+
+
+
+    
+ <!-- Health Tips Section -->
+<section class="health-tips">
+    <h2>Daily Health Tips</h2>
+    <div class="tips-container">
+        <div class="tip">
+            <img src="{{ url_for('static', filename='images/water1.jpeg') }}" alt="Stay Hydrated">
+            <h3>Tip 1: Stay Hydrated</h3>
+            <p>Drink at least 8 glasses of water a day to keep your body functioning optimally.</p>
+        </div>
+        <div class="tip">
+            <img src="{{ url_for('static', filename='images/balancediet.jpeg') }}" alt="Balance diet">
+            <h3>Tip 2: Balanced Diet</h3>
+            <p>Ensure your meals include a mix of proteins, carbs, and healthy fats to support overall well-being.</p>
+        </div>
+        <div class="tip">
+            <img src="{{ url_for('static', filename='images/exercise.jpeg') }}" alt="Exercise Regularly">
+            <h3>Tip 3: Exercise Regularly</h3>
+            <p>Aim for at least 30 minutes of exercise per day to keep your body active and strong.</p>
+        </div>
+        <div class="tip">
+            <img src="{{ url_for('static', filename='images/sleep.jpeg') }}" alt="Sleep well">
+            <h3>Tip 4: Sleep Well</h3>
+            <p>Get 7-8 hours of quality sleep every night to support mental and physical health.</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Health Resources Section -->
+<section class="health-resources">
+    <h2>Health Resources</h2>
+    <div class="resource">
+        <h3>Health Guides</h3>
+        <p>Explore comprehensive health guides on managing chronic conditions, preventive care, and general well-being.</p>
+        <a href="{{ url_for('health_guides') }}">Read Guides</a>
+    </div>
+    <div class="resource">
+        <h3>Medication Information</h3>
+        <p>Get detailed information about medications, their uses, side effects, and more to help you.</p>
+        <a href="{{ url_for('medication_info') }}">Explore Medications</a>
+    </div>
+    <div class="resource">
+        <h3>Health Articles</h3>
+        <p>Stay updated with the latest health-related articles, research, and findings in the world of medicine and healthcare.</p>
+        <a href="{{ url_for('health_articles') }}">Read Articles</a>
+    </div>
+
+    <div class="resource">
+        <h3>Health Articles</h3>
+        <p>Stay updated with the latest health-related articles, research, and findings in the world of medicine and healthcare.</p>
+        <a href="{{ url_for('health_articles') }}">Read Articles</a>
+    </div>
+</section>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+</html>

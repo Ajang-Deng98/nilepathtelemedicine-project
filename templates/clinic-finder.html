@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NilePath Telemedicine - Clinic Finder</title>
+  <!-- <link rel="stylesheet" href="css/clinic-finder.css"> -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/clinic-finder.css') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+<header>
+  <nav class="navbar">
+      <div class="navbar-left">
+          <!-- Hamburger Icon for Mobile -->
+          <div class="hamburger" onclick="toggleNavbar()">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+
+          <!-- Navbar Links (Hidden on Mobile by Default) -->
+          <ul class="navbar-links">
+              <li><a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Home</a></li>
+              <li><a href="{{ url_for('book_appointment') }}" class="{% if request.endpoint == 'book_appointment' %}active{% endif %}">Book Appointment</a></li>
+              <li><a href="{{ url_for('disease_info') }}" class="{% if request.endpoint == 'disease_info' %}active{% endif %}">Search Diseases</a></li>
+              <li><a href="{{ url_for('clinic_finder') }}" class="{% if request.endpoint == 'clinic_finder' %}active{% endif %}">Find Clinics</a></li>
+              <li><a href="{{ url_for('bmi_checker') }}" class="{% if request.endpoint == 'bmi_checker' %}active{% endif %}">BMI Calculator</a></li>
+              <li><a href="{{ url_for('result') }}" class="{% if request.endpoint == 'result' %}active{% endif %}">BMI Results</a></li>
+              <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          </ul>
+      </div>
+
+      <div class="navbar-right">
+          <div class="navbar-search-profile">
+              <input type="text" placeholder="Search...">
+          </div>
+      </div>
+  </nav>
+</header>
+
+</header>
+
+<!-- Main Content -->
+<!-- Main Content -->
+<main class="clinic-finder">
+  <h2>Find Nearby Clinics and Healthcare Facilities</h2>
+  <p>Use this tool to locate the nearest clinics, hospitals, and healthcare facilities based on your location. Simply enter your area, such as "Gudele" or "Kator," and click "Find Clinics" to view a list of available options near you. The map below will show the exact locations to help you navigate easily.</p>
+
+  <form id="clinicForm" class="clinic-form">
+      <input type="text" id="location" placeholder="Enter your location (e.g., Gudele, Kator)">
+      <button type="submit">Find Clinics</button>
+  </form>
+  
+  <ul id="clinicList" class="clinic-list">
+      <!-- Results will be injected here -->
+  </ul>
+
+  <h3>Locations of Hospitals and Clinics</h3>
+  <div id="map" class="map-container">Loading map...</div>
+</main>
+
+
+
+  <script src="{{ url_for('static', filename='js/clinic.js') }}"></script>
+</body>
+</html>

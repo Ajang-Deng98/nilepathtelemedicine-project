@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Information Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/disease-info.css') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger" onclick="toggleNavbar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navbar Links (Hidden on Mobile by Default) -->
+            <ul class="navbar-links">
+                <li><a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Home</a></li>
+                <li><a href="{{ url_for('book_appointment') }}" class="{% if request.endpoint == 'book_appointment' %}active{% endif %}">Book Appointment</a></li>
+                <li><a href="{{ url_for('disease_info') }}" class="{% if request.endpoint == 'disease_info' %}active{% endif %}">Search Diseases</a></li>
+                <li><a href="{{ url_for('clinic_finder') }}" class="{% if request.endpoint == 'clinic_finder' %}active{% endif %}">Find Clinics</a></li>
+                <li><a href="{{ url_for('bmi_checker') }}" class="{% if request.endpoint == 'bmi_checker' %}active{% endif %}">BMI Calculator</a></li>
+                <li><a href="{{ url_for('result') }}" class="{% if request.endpoint == 'result' %}active{% endif %}">BMI Results</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <div class="navbar-search-profile">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </nav>
+</header>
+
+    
+
+<section id="disease-search">
+    <h1>Welcome to the Disease Information Directory</h1> 
+
+    <p class="note">
+        Note: While the information provided here is accurate, it’s essential to consult with a healthcare provider for diagnosis and treatment. Consider booking an appointment or visiting a healthcare facility for professional medical advice. Always consult a healthcare professional before making any health decisions.
+    </p>
+    <h2>Search for a Disease</h2>
+    <input type="text" id="search-input" placeholder="Enter disease name...">
+    <button id="search-button">Search</button>
+
+   
+</section>
+        
+        <section id="disease-info">
+            <!-- Malaria -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Malaria.jpeg') }}" alt="Malaria">
+                <h3>Malaria</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through the bite of an infected female Anopheles mosquito.</p>
+                <p><strong>Prevention:</strong> Use of insecticide-treated mosquito nets, indoor spraying, and antimalarial medications.</p>
+                <p><strong>Treatment:</strong> Antimalarial drugs like artemisinin-based combination therapies (ACTs).</p>
+            </div>
+        
+            <!-- Cholera -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/cholera.jpeg') }}" alt="Cholera">
+                <h3>Cholera</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through contaminated water or food.</p>
+                <p><strong>Prevention:</strong> Ensure clean drinking water, proper sanitation, and food hygiene.</p>
+                <p><strong>Treatment:</strong> Oral rehydration solutions (ORS), IV fluids, and antibiotics in severe cases.</p>
+            </div>
+        
+            <!-- Hepatitis B -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Hepatitis.jpeg') }}" alt="Hepatitis B">
+                <h3>Hepatitis B</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through contact with infected blood or bodily fluids.</p>
+                <p><strong>Prevention:</strong> Vaccination, use of sterile needles, and safe sex practices.</p>
+                <p><strong>Treatment:</strong> Antiviral medications and monitoring for liver damage.</p>
+            </div>
+        
+            <!-- Typhoid Fever -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Typhoid.jpeg') }}" alt="Typhoid Fever">
+                <h3>Typhoid Fever</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through contaminated food and water.</p>
+                <p><strong>Prevention:</strong> Vaccination, drinking clean water, and practicing good hygiene.</p>
+                <p><strong>Treatment:</strong> Antibiotics such as ciprofloxacin and azithromycin.</p>
+            </div>
+        
+            <!-- Schistosomiasis (Bilharzia) -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Schistosomiasis.jpeg') }}" alt="Schistosomiasis">
+                <h3>Schistosomiasis (Bilharzia)</h3>
+                <p><strong>Mode of Transmission:</strong> Contact with contaminated freshwater where parasitic worms live.</p>
+                <p><strong>Prevention:</strong> Avoid swimming in freshwater, improve sanitation, and snail control.</p>
+                <p><strong>Treatment:</strong> Praziquantel is the most effective treatment.</p>
+            </div>
+        
+            <!-- Measles -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Measles.jpeg') }}" alt="Measles">
+                <h3>Measles</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through respiratory droplets when an infected person coughs or sneezes.</p>
+                <p><strong>Prevention:</strong> Vaccination is the most effective prevention method.</p>
+                <p><strong>Treatment:</strong> Supportive care like rest, fluids, and vitamin A supplementation.</p>
+            </div>
+        
+            <!-- HIV/AIDS -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/HIV.jpeg') }}" alt="HIV/AIDS">
+                <h3>HIV/AIDS</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through unprotected sex, sharing needles, and from mother to child during childbirth or breastfeeding.</p>
+                <p><strong>Prevention:</strong> Use of condoms, antiretroviral treatment, and regular testing.</p>
+                <p><strong>Treatment:</strong> Antiretroviral therapy (ART) to manage the virus and improve life expectancy.</p>
+            </div>
+        
+            <!-- Tuberculosis (TB) -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Tuberculosis.png') }}" alt="Tuberculosis">
+                <h3>Tuberculosis (TB)</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through the air when an infected person coughs or sneezes.</p>
+                <p><strong>Prevention:</strong> Vaccination with Bacillus Calmette-Guerin (BCG), good ventilation, and avoiding crowded areas.</p>
+                <p><strong>Treatment:</strong> A combination of antibiotics taken over a 6-9 month period.</p>
+            </div>
+        
+            <!-- Guinea Worm Disease (Dracunculiasis) -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Guinea.jpeg') }}" alt="Guinea Worm Disease">
+                <h3>Guinea Worm Disease (Dracunculiasis)</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through drinking water contaminated with water fleas that carry guinea worm larvae.</p>
+                <p><strong>Prevention:</strong> Drink filtered water, avoid stagnant water, and educate communities on safe water practices.</p>
+                <p><strong>Treatment:</strong> There is no specific treatment; the worm must be slowly extracted from the body over several weeks.</p>
+            </div>
+        
+            <!-- Leishmaniasis -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Leishmaniasis.jpeg') }}" alt="Leishmaniasis">
+                <h3>Leishmaniasis</h3>
+                <p><strong>Mode of Transmission:</strong> Spread by the bite of infected sandflies.</p>
+                <p><strong>Prevention:</strong> Use insect repellent, sleep under treated bed nets, and wear long clothing in affected areas.</p>
+                <p><strong>Treatment:</strong> Antiparasitic medications such as Amphotericin B and Miltefosine.</p>
+            </div>
+        
+            <!-- Yellow Fever -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/YellowFever.png') }}" alt="Yellow Fever">
+                <h3>Yellow Fever</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through the bite of an infected Aedes mosquito.</p>
+                <p><strong>Prevention:</strong> Vaccination is the best prevention, along with mosquito control measures.</p>
+                <p><strong>Treatment:</strong> No specific treatment; supportive care for symptoms like fever and dehydration.</p>
+            </div>
+        
+            <!-- Meningitis -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/Meningitis.jpeg') }}" alt="Meningitis">
+                <h3>Meningitis</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through respiratory droplets, close contact, or contaminated food.</p>
+                <p><strong>Prevention:</strong> Vaccination and avoiding close contact with infected individuals.</p>
+                <p><strong>Treatment:</strong> Antibiotics for bacterial meningitis; antiviral drugs for viral forms, along with supportive care.</p>
+            </div>
+        
+        
+            <!-- Ebola Virus Disease (EVD) -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/ebola.jpeg') }}" alt="Ebola Virus Disease">
+                <h3>Ebola Virus Disease (EVD)</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through contact with bodily fluids of infected individuals or contaminated objects.</p>
+                <p><strong>Prevention:</strong> Avoid contact with infected individuals, use personal protective equipment (PPE), and maintain proper hygiene.</p>
+                <p><strong>Treatment:</strong> Supportive care and experimental antiviral treatments; early detection is critical.</p>
+            </div>
+                
+            <!-- Dengue Fever -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/dengue.jpeg') }}" alt="Dengue Fever" class="disease-image">
+                <h3>Dengue Fever</h3>
+                <p><strong>Mode of Transmission:</strong> Spread through the bite of an infected Aedes mosquito.</p>
+                <p><strong>Prevention:</strong> Use insect repellent, wear protective clothing, and reduce mosquito habitats (stagnant water).</p>
+                <p><strong>Treatment:</strong> Supportive care with fluids, pain relievers like acetaminophen, and hospitalization for severe cases.</p>
+            </div>
+
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/ulcer.jpeg') }}" alt="Ulcer" class="disease-image">
+                <h3>Ulcer</h3>
+                <p><strong>Mode of Transmission:</strong> Not contagious; ulcers form due to factors like Helicobacter pylori infection, long-term use of NSAIDs, and stress.</p>
+                <p><strong>Prevention:</strong> Avoid excessive use of NSAIDs, manage stress, avoid smoking and alcohol, and treat Helicobacter pylori infection.</p>
+                <p><strong>Treatment:</strong> Proton pump inhibitors (PPIs), antibiotics for H. pylori, and lifestyle changes like diet modification.</p>
+            </div>
+
+            <!-- Hypertension -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/hypertension.jpeg') }}" alt="Hypertension" class="disease-image">
+                <h3>Hypertension</h3>
+                <p><strong>Mode of Transmission:</strong> Not contagious; caused by factors like genetics, obesity, poor diet, and lack of exercise.</p>
+                <p><strong>Prevention:</strong> Maintain a healthy diet low in sodium, exercise regularly, avoid smoking and excessive alcohol consumption.</p>
+                <p><strong>Treatment:</strong> Lifestyle changes, antihypertensive medications like ACE inhibitors, and regular monitoring of blood pressure.</p>
+            </div>
+
+            <!-- Diabetes -->
+                <div class="disease">
+                <img src="{{ url_for('static', filename='images/diabetes.jpeg') }}" alt="Diabetes" class="disease-image">
+                <h3>Diabetes</h3>
+                <p><strong>Mode of Transmission:</strong> Not contagious; caused by the body’s inability to regulate blood sugar, influenced by genetics, diet, and lifestyle.</p>
+                <p><strong>Prevention:</strong> Maintain a healthy diet, exercise regularly, manage weight, and monitor blood sugar levels.</p>
+                <p><strong>Treatment:</strong> Insulin therapy, oral medications, lifestyle changes including diet and exercise.</p>
+            </div>
+
+            <!-- Heart Disease -->
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/heart_disease.png') }}" alt="Heart Disease" class="disease-image">
+                <h3>Heart Disease</h3>
+                <p><strong>Mode of Transmission:</strong> Not contagious; caused by factors such as high blood pressure, high cholesterol, smoking, obesity, and genetics.</p>
+                <p><strong>Prevention:</strong> Maintain a healthy diet, exercise regularly, avoid smoking, manage stress, and control risk factors like high blood pressure and diabetes.</p>
+                <p><strong>Treatment:</strong> Lifestyle changes, medications like statins and beta-blockers, and in severe cases, surgical procedures such as angioplasty or bypass surgery.</p>
+            </div>
+
+            <!-- Giardiasis -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/giardia.jpeg') }}" alt="Giardiasis">
+    <h3>Giardiasis (Giardia lamblia)</h3>
+    <p><strong>Mode of Transmission:</strong> Ingesting water or food contaminated with Giardia cysts.</p>
+    <p><strong>Prevention:</strong> Boiling or filtering drinking water, good sanitation practices.</p>
+    <p><strong>Treatment:</strong> Antiparasitic medications, such as metronidazole.</p>
+</div>
+
+<!-- Hookworm Infection -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/hookworm.png') }}" alt="Hookworm Infection">
+    <h3>Hookworm Infection (Ancylostoma duodenale and Necator americanus)</h3>
+    <p><strong>Mode of Transmission:</strong> Larvae in contaminated soil penetrate the skin.</p>
+    <p><strong>Prevention:</strong> Wearing shoes, improved sanitation.</p>
+    <p><strong>Treatment:</strong> Antiparasitic medications, such as albendazole and mebendazole.</p>
+</div>
+
+<!-- African Trypanosomiasis (Sleeping Sickness) -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/SleepingSickness.jpeg') }}" alt="African Trypanosomiasis">
+    <h3>African Trypanosomiasis (Sleeping Sickness - Trypanosoma brucei)</h3>
+    <p><strong>Mode of Transmission:</strong> Spread by the bite of infected tsetse flies.</p>
+    <p><strong>Prevention:</strong> Insect repellents, avoiding infested areas.</p>
+    <p><strong>Treatment:</strong> Antiparasitic drugs, like pentamidine or eflornithine.</p>
+</div>
+
+<!-- Brucellosis -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/Brucellosis.png') }}" alt="Brucellosis">
+    <h3>Brucellosis (Brucella spp. bacteria)</h3>
+    <p><strong>Mode of Transmission:</strong> Consumption of unpasteurized dairy products or contact with infected animals.</p>
+    <p><strong>Prevention:</strong> Avoiding raw dairy, proper handling of animals.</p>
+    <p><strong>Treatment:</strong> Antibiotics like doxycycline and rifampin.</p>
+</div>
+
+<!-- Hepatitis E -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/Hepatitis E.jpeg') }}" alt="Hepatitis E">
+    <h3>Hepatitis E (Hepatitis E virus)</h3>
+    <p><strong>Mode of Transmission:</strong> Consuming contaminated water.</p>
+    <p><strong>Prevention:</strong> Drinking safe water, good sanitation.</p>
+    <p><strong>Treatment:</strong> Typically supportive care; resolves on its own, but ribavirin may be used in severe cases.</p>
+</div>
+
+<!-- Amoebiasis -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/Amoebiasis.jpeg') }}" alt="Amoebiasis">
+    <h3>Amoebiasis (Entamoeba histolytica)</h3>
+    <p><strong>Mode of Transmission:</strong> Fecal-oral route, typically through contaminated food or water.</p>
+    <p><strong>Prevention:</strong> Improved sanitation, handwashing, and clean drinking water.</p>
+    <p><strong>Treatment:</strong> Metronidazole or tinidazole for killing amoebic cysts and parasites.</p>
+</div>
+
+<!-- Streptococcus pneumoniae (Pneumonia) -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/Schistosomiasis.jpeg') }}" alt="Pneumonia">
+    <h3>Streptococcus pneumoniae (Pneumonia)</h3>
+    <p><strong>Mode of Transmission:</strong> Airborne droplets from coughs and sneezes.</p>
+    <p><strong>Prevention:</strong> Vaccination, good hygiene, and avoiding close contact with infected people.</p>
+    <p><strong>Treatment:</strong> Antibiotics such as amoxicillin or azithromycin, and supportive care.</p>
+</div>
+<!-- Sickle Cell Disease -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/Sickle Cell Disease.png') }}" alt="Sickle Cell Disease">
+    <h3>Sickle Cell Disease</h3>
+    <p><strong>Mode of Transmission:</strong> Genetic disorder inherited from both parents with sickle cell traits.</p>
+    <p><strong>Prevention:</strong> Genetic counseling and testing, especially in populations at higher risk.</p>
+    <p><strong>Treatment:</strong> Pain management, blood transfusions, and medications like hydroxyurea to reduce complications.</p>
+</div>
+
+<!-- Hemophilia -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/Hemophilia.jpeg') }}" alt="Hemophilia">
+    <h3>Hemophilia</h3>
+    <p><strong>Mode of Transmission:</strong> Genetic disorder typically inherited from a parent with the hemophilia gene.</p>
+    <p><strong>Prevention:</strong> Genetic testing and counseling; however, there is no way to prevent the disease if inherited.</p>
+    <p><strong>Treatment:</strong> Regular injections of clotting factor VIII or IX, depending on the type of hemophilia, to prevent excessive bleeding.</p>
+</div>
+
+<!-- Thalassemia -->
+<div class="disease">
+    <img src="{{ url_for('static', filename='images/Thalassemia.png') }}" alt="Thalassemia">
+    <h3>Thalassemia</h3>
+    <p><strong>Mode of Transmission:</strong> Genetic disorder inherited from one or both parents with mutated hemoglobin genes.</p>
+    <p><strong>Prevention:</strong> Genetic counseling and screening, especially for those with a family history of thalassemia.</p>
+    <p><strong>Treatment:</strong> Regular blood transfusions, iron chelation therapy to remove excess iron, and, in some cases, bone marrow transplant.</p>
+</div>
+
+
+            
+        </section>
+        
+  
+        <script src="{{ url_for('static', filename='js/disease-info.js') }}"></script>
+</body>
+</html>

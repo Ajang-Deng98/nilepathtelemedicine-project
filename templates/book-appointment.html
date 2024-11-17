@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilepath Telemdecines - Book an Appointment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/book-appointment.css') }}">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+  <!-- Navbar -->
+<header>
+  <nav class="navbar">
+      <div class="navbar-left">
+          <!-- Hamburger Icon for Mobile -->
+          <div class="hamburger" onclick="toggleNavbar()">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+
+          <!-- Navbar Links (Hidden on Mobile by Default) -->
+          <ul class="navbar-links">
+              <li><a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Home</a></li>
+              <li><a href="{{ url_for('book_appointment') }}" class="{% if request.endpoint == 'book_appointment' %}active{% endif %}">Book Appointment</a></li>
+              <li><a href="{{ url_for('disease_info') }}" class="{% if request.endpoint == 'disease_info' %}active{% endif %}">Search Diseases</a></li>
+              <li><a href="{{ url_for('clinic_finder') }}" class="{% if request.endpoint == 'clinic_finder' %}active{% endif %}">Find Clinics</a></li>
+              <li><a href="{{ url_for('bmi_checker') }}" class="{% if request.endpoint == 'bmi_checker' %}active{% endif %}">BMI Calculator</a></li>
+              <li><a href="{{ url_for('result') }}" class="{% if request.endpoint == 'result' %}active{% endif %}">BMI Results</a></li>
+              <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          </ul>
+      </div>
+
+      <div class="navbar-right">
+          <div class="navbar-search-profile">
+              <input type="text" placeholder="Search...">
+          </div>
+      </div>
+  </nav>
+</header>
+
+  <!-- Welcome Note -->
+  <div class="welcome-note">
+    <h2>Welcome to NilePath Telemedicine!</h2>
+    <p>We are here to connect you with top healthcare specialists. Book an appointment and consult with our experienced doctors for personalized care and guidance.</p>
+  </div>
+
+
+  <div class="main-container">
+
+
+    
+<!-- Doctors Information -->
+<div class="doctor-section">
+  <h2 class="heading">Doctors' Information</h2>
+  <div class="doctor-cards">
+    <!-- Doctor 1 -->
+    <div class="doctor-card">
+      <img src="{{ url_for('static', filename='images/doctor1.jpeg') }}" alt="Dr. Smith">
+      <h3>Dr. Smith Garang</h3>
+      <p>Specialization: Infectious Disease Specialist</p>
+      <p>Available: Mon - Wed, 9:00 AM - 2:00 PM</p>
+      <p>Main Location: Downtown Clinic</p>
+    </div>
+
+    <!-- Doctor 2 -->
+    <div class="doctor-card">
+      <img src="{{ url_for('static', filename='images/doctor2.jpeg') }}" alt="Dr. John Deng Callisto">
+      <h3>Dr. John Deng Callisto</h3>
+      <p>Specialization: Dermatologist</p>
+      <p>Available: Thurs - Fri, 10:00 AM - 4:00 PM</p>
+      <p>Main Location: Westside Clinic</p>
+    </div>
+
+    <!-- Doctor 3 -->
+    <div class="doctor-card">
+      <img src="{{ url_for('static', filename='images/doctor3.jpeg') }}" alt="Dr. Williams Garnacho">
+      <h3>Dr. Williams Garnacho</h3>
+      <p>Specialization: Pediatrician</p>
+      <p>Available: Mon, Wed, Sat, 8:00 AM - 1:00 PM</p>
+      <p>Main Location: City Hospital</p>
+    </div>
+
+    <!-- Doctor 4 -->
+    <div class="doctor-card">
+      <img src="{{ url_for('static', filename='images/doctor4.jpeg') }}" alt="Dr. Martha Ayen">
+      <h3>Dr. Martha Ayen</h3>
+      <p>Specialization: Mental Health Specialist</p>
+      <p>Available: Tue - Thur, 10:00 AM - 3:00 PM</p>
+      <p>Main Location: Southside Health Center</p>
+    </div>
+
+    <!-- Doctor 5 -->
+    <div class="doctor-card">
+      <img src="{{ url_for('static', filename='images/doctor5.jpeg') }}" alt="Dr. Akech Othow">
+      <h3>Dr. Akech Othow</h3>
+      <p>Specialization: General Practitioner (Consultation)</p>
+      <p>Available: Mon - Sat, 9:00 AM - 5:00 PM</p>
+      <p>Main Location: Main Street Clinic</p>
+    </div>
+
+    <!-- Doctor 6 -->
+    <div class="doctor-card">
+      <img src="{{ url_for('static', filename='images/doctor6.jpeg') }}" alt="Dr. Abuk Nyal">
+      <h3>Dr. Abuk Nyal</h3>
+      <p>Specialization: Maternal and Child Health Specialist</p>
+      <p>Available: Mon - Fri, 8:00 AM - 4:00 PM</p>
+      <p>Main Location: Women's Health Center</p>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Appointment Form -->
+<div class="form-section">
+  <h2>Book an Appointment</h2>
+  <form id="bookingForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="age">Your Age:</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <label for="doctor">Select Doctor:</label>
+      <select id="doctor" name="doctor" required>
+          <option value="Dr. Smith">Dr. Smith</option>
+          <option value="Dr. John">Dr. John</option>
+          <option value="Dr. Williams">Dr. Williams</option>
+          <option value="Dr. Martha">Dr. Martha</option>
+          <option value="Dr. Akech">Dr. Akech</option>
+          <option value="Dr. Abuk">Dr. Abuk</option>
+      </select>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="date">Appointment Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Appointment Time:</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="location">Appointment Location:</label>
+      <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+      <label for="details">Booking Details:</label>
+      <textarea id="details" name="details" rows="4" placeholder="Enter booking details" required></textarea>
+
+      <button type="submit">Book Appointment</button>
+  </form>
+
+
+  <!-- Confirmation Reminder Message -->
+  <div class="confirmation-reminder">
+    <p><strong>Note:</strong> Please check your email for a confirmation of your appointment. Be sure to arrive on time with any required documents or information. Thank you for choosing NilePath Telemedicine!</p>
+</div>
+
+</div>
+
+
+
+
+
+  <script>
+
+    function toggleNavbar() {
+      document.querySelector('.navbar-links').classList.toggle('active');
+  }
+  
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const doctor = document.getElementById('doctor').value;
+        const email = document.getElementById('email').value;
+        const details = document.getElementById('details').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const location = document.getElementById('location').value;
+
+        // Send the booking details to the backend via fetch
+        fetch('/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, age, doctor, email, details, date, time, location })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Appointment booked successfully, and the doctor has been notified!');
+            } else {
+                alert('Failed to book appointment.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>
